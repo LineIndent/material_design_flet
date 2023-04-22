@@ -8,8 +8,8 @@ setup(
     description="Material UI Library for Flet",
     long_description="",
     long_description_content_type="text/markdown",
-    url="https://github.com/your-username/your-package-name",
-    packages=["your_package_name"],
+    url="https://github.com/LineIndent/material_design_flet",
+    packages=["flet_material", "styles"],
     install_requires=[
         # List your dependencies here
     ],
