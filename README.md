@@ -1,5 +1,6 @@
 
-<h1 style="font-size: 2em; text-align: center; padding: 10px; background: linear-gradient(to top right, #FF00FF, #4B0082); background-clip: text; border-radius: 10px;">Flet Material Library</h1>
+<h1 style="font-size: 2.5em; border-radius: 15px; background-image: linear-gradient(to top right, #FF00FF, #4B0082); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Flet Material Library</h1>
+
 
 
 <p align="center">
