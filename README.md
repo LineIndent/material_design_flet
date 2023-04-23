@@ -5,6 +5,15 @@
 
 
 
+<p align="center">
+  <strong>
+    A 
+    <a href="">Material Design</a> 
+    theme for 
+    <a href="">MkDocs</a>
+  </strong>
+</p>
+
 
 <p align="center">
   <a href="https://github.com/LineIndent/material_design_flet/actions"><img

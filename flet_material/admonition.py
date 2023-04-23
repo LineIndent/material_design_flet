@@ -12,10 +12,15 @@ class Admonitions(ft.Container):
         *args,
         **kwargs
     ):
-        # define: control
+        #
+        self.type_ = type_
         self.expanded_height = expanded_height
+        self.expand = expand
+        self.controls_list = controls_list
+
+        # define: control
         self.column = ft.Column(
-            controls=controls_list,
+            controls=self.controls_list,
         )
 
         # define admonition title properties
@@ -79,7 +84,7 @@ class Admonitions(ft.Container):
         kwargs.setdefault("border", ft.border.all(0.85, border_color))
         kwargs.setdefault("clip_behavior", ft.ClipBehavior.HARD_EDGE)
         kwargs.setdefault("animate", ft.Animation(300, "decelerate"))
-        kwargs.setdefault("expand", expand)
+        kwargs.setdefault("expand", self.expand)
         kwargs.setdefault("border_radius", 6)
         kwargs.setdefault("height", 60)
         kwargs.setdefault("padding", 0)
