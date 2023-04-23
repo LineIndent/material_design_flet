@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/LineIndent/material_design_flet/actions"><img
-    src="https://github.com/LineIndent/material_design_flet/workflows/build/badge.svg?branch=main"
+    src="https://github.com/LineIndent/material_design_flet/actions/workflows/build.yml/badge.svg?branch=main"
     alt="Build"
   /></a>
   <a href="https://pypistats.org/packages/flet-material"><img
