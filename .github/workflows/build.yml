@@ -1,4 +1,4 @@
-name: Flet Material Library Test Workflow
+name: Build
 
 on:
   push:
