@@ -5,40 +5,29 @@ from styles import admonitions_color_scheme, font_scheme
 class Admonitions(ft.Container):
     def __init__(
         self,
-        admonitions_type: str = None,
-        admonitions_expand: bool = None,
-        admonitions_end_height: int = 0,
-        admonitions_list: list = [],
+        type_: str,
+        expanded_height: int,
+        expand: bool,
+        controls_list: list,
         *args,
         **kwargs
     ):
         # define: control
-        self.admonitions_end_height = admonitions_end_height
+        self.expanded_height = expanded_height
         self.column = ft.Column(
-            controls=admonitions_list,
+            controls=controls_list,
         )
 
         # define admonition title properties
-        colors = admonitions_color_scheme.get(admonitions_type, {})
-        bgcolor = colors.get("bgcolor", "#20222c")
-        border_color = colors.get("border_color", "white24")
-        icon: str = ""
+        bgcolor = admonitions_color_scheme.get(type_, {}).get("bgcolor", "#20222c")
+        border_color = admonitions_color_scheme.get(type_, {}).get(
+            "border_color", "white24"
+        )
+        icon = admonitions_color_scheme.get(type_, {}).get("icon", "white24")
 
         fonts = font_scheme.get("admonitions_title", {})
         title_font = fonts.get("font_family")
         title_size = fonts.get("size")
-
-        if admonitions_type == None:
-            admonitions_type = ""
-
-        if admonitions_type == "note":
-            icon = ft.icons.EVENT_NOTE_ROUNDED
-
-        if admonitions_type == "info":
-            icon = ft.icons.INFO_ROUNDED
-
-        if admonitions_type == "tip":
-            icon = ft.icons.TIPS_AND_UPDATES_ROUNDED
 
         self.container = ft.Container(
             height=58,
@@ -58,7 +47,7 @@ class Admonitions(ft.Container):
                                 size=18,
                             ),
                             ft.Text(
-                                admonitions_type.capitalize(),
+                                type_.capitalize(),
                                 size=title_size,
                                 font_family=title_font,
                                 weight="w700",
@@ -90,7 +79,7 @@ class Admonitions(ft.Container):
         kwargs.setdefault("border", ft.border.all(0.85, border_color))
         kwargs.setdefault("clip_behavior", ft.ClipBehavior.HARD_EDGE)
         kwargs.setdefault("animate", ft.Animation(300, "decelerate"))
-        kwargs.setdefault("expand", admonitions_expand)
+        kwargs.setdefault("expand", expand)
         kwargs.setdefault("border_radius", 6)
         kwargs.setdefault("height", 60)
         kwargs.setdefault("padding", 0)
@@ -110,8 +99,8 @@ class Admonitions(ft.Container):
 
     # method: expand and retract admonition control + animation set
     def resize_admonition(self, e):
-        if self.height != self.admonitions_end_height:
-            self.height = self.admonitions_end_height
+        if self.height != self.expanded_height:
+            self.height = self.expanded_height
             self.container.border_radius = ft.border_radius.only(topLeft=6, topRight=6)
             e.control.rotate = ft.Rotate(0.75, ft.alignment.center)
         else:
@@ -120,3 +109,76 @@ class Admonitions(ft.Container):
             self.container.border_radius = 6
 
         self.update()
+
+
+class FixedAdmonitions(ft.Container):
+    def __init__(self, type_: str, expand: bool, *args, **kwargs):
+        # define admonition title properties
+        bgcolor = admonitions_color_scheme.get(type_, {}).get("bgcolor", "#20222c")
+        border_color = admonitions_color_scheme.get(type_, {}).get(
+            "border_color", "white24"
+        )
+        icon = admonitions_color_scheme.get(type_, {}).get("icon", "white24")
+
+        fonts = font_scheme.get("admonitions_title", {})
+        title_font = fonts.get("font_family")
+        title_size = fonts.get("size")
+
+        self.container = ft.Container(
+            height=58,
+            bgcolor=ft.colors.with_opacity(0.95, bgcolor),
+            border_radius=6,
+            padding=10,
+            content=ft.Row(
+                alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+                controls=[
+                    ft.Row(
+                        vertical_alignment="center",
+                        spacing=10,
+                        controls=[
+                            ft.Icon(
+                                name=icon,
+                                color=border_color,
+                                size=18,
+                            ),
+                            ft.Text(
+                                type_.capitalize(),
+                                size=title_size,
+                                font_family=title_font,
+                                weight="w700",
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+        )
+
+        # define self instance properties
+        kwargs.setdefault(
+            "shadow",
+            ft.BoxShadow(
+                spread_radius=8,
+                blur_radius=15,
+                color=ft.colors.with_opacity(0.35, "black"),
+                offset=ft.Offset(4, 4),
+            ),
+        )
+        kwargs.setdefault("border", ft.border.all(0.85, border_color))
+        kwargs.setdefault("clip_behavior", ft.ClipBehavior.HARD_EDGE)
+        kwargs.setdefault("animate", ft.Animation(300, "decelerate"))
+        kwargs.setdefault("expand", expand)
+        kwargs.setdefault("border_radius", 6)
+        kwargs.setdefault("height", 60)
+        kwargs.setdefault("padding", 0)
+        kwargs.setdefault(
+            "content",
+            ft.Column(
+                alignment="start",
+                spacing=0,
+                controls=[
+                    self.container,
+                ],
+            ),
+        )
+
+        super().__init__(*args, **kwargs)

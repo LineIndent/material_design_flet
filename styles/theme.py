@@ -9,7 +9,10 @@ flet_material_theme: dict = {
         "primary": "#dd6058",
         "accent": "#dc2626",
     },
-    "pink": {"primary": "#d63863", "accent": "#9f1239"},
+    "pink": {
+        "primary": "#d63863",
+        "accent": "#9f1239",
+    },
     "purple": {
         "primary": "#a855f7",
         "accent": "#7e22ce",

@@ -4,7 +4,7 @@ import time
 
 
 class CheckBox(ft.Container, Theme):
-    def __init__(self, *args, **kwargs):
+    def __init__(self, shape: str, *args, **kwargs):
         self.checkbox: ft.Control = ft.Checkbox(
             fill_color=Theme.primary_theme,
             check_color="white",
@@ -14,10 +14,10 @@ class CheckBox(ft.Container, Theme):
 
         kwargs.setdefault("width", 25)
         kwargs.setdefault("height", 25)
-        kwargs.setdefault("shape", ft.BoxShape("circle"))
+        kwargs.setdefault("shape", ft.BoxShape(shape))
         kwargs.setdefault("bgcolor", Theme.primary_theme)
         kwargs.setdefault("content", self.checkbox)
-        kwargs.setdefault("scale", 1)
+        kwargs.setdefault("scale", 0.9)
         kwargs.setdefault("animate_scale", ft.Animation(500, "bounceOut"))
         kwargs.setdefault("on_click", lambda e: self.animate_checkbox(e))
 
