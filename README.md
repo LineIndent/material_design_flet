@@ -1,9 +1,9 @@
 
 <!-- <h2 style="color: #ff0000;" align=center>My Heading</h2>
  -->
-<h2 style="font-size: 2.55rem; font-weight: bold; background-image: linear-gradient(to top right, #3b82f6, #1b93f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height=0rem" align=center>
+<p style="font-size: 2.55rem; font-weight: bold; background-image: linear-gradient(to top right, #3b82f6, #1b93f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height=0rem" align=center>
   Flet Material Library
-</h2>
+</p>
 </p>
 <p align="center">
   <strong>
