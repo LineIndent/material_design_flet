@@ -1,4 +1,4 @@
-name: Flet Material Library Workflow
+name: Build
 
 on:
   push:
@@ -6,7 +6,6 @@ on:
 
 jobs:
   build:
-    name: Build
     runs-on: ubuntu-latest
     strategy:
       matrix:

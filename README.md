@@ -1,18 +1,17 @@
 
-<h1 style="border-radius: 10px; background: linear-gradient(to top right, fuchsia, indigo); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-align: center;">
-  <p style="display:inline-block;">Flet Material Library</p>
-</h1>
 
 
 
 <p align="center">
   <strong>
     A 
-    <a href="">Material Design</a> 
-    theme for 
-    <a href="">MkDocs</a>
+    <a href="">UI Library</a> 
+    for
+    <a href="">Flet Framework</a>
   </strong>
 </p>
+
+
 
 
 <p align="center">
