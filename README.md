@@ -1,3 +1,7 @@
+
+<h1 style="font-size: 2em; text-align: center; padding: 10px; background: linear-gradient(to top right, #FF00FF, #4B0082); -webkit-background-clip: text; -webkit-text-fill-color: transparent; border-radius: 10px;">Flet Material Library</h1>
+
+
 <p align="center">
   <a href="https://github.com/LineIndent/material_design_flet/actions"><img
     src="https://github.com/LineIndent/material_design_flet/actions/workflows/build.yml/badge.svg?branch=main"
