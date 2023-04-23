@@ -3,8 +3,6 @@
     src="https://github.com/LineIndent/material_design_flet/workflows/build/badge.svg?branch=main"
     alt="Build"
   /></a>
-
-  /></a>
   <a href="https://pypistats.org/packages/flet-material"><img
     src="https://img.shields.io/pypi/dm/flet-material.svg"
     alt="Downloads"
