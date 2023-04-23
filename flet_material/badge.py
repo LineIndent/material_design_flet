@@ -8,11 +8,14 @@ class NotificationBadge(ft.Stack, Theme):
     def __init__(
         self,
         title: str,
-        size: str = "sm",
-        bagde_value: int = 0,
+        size: str,
+        notification: int,
         *args,
         **kwargs,
     ):
+        # set the start notification counter
+        self.notification = notification
+
         # get the wdiget dimension
         size = badge_size_dimensions.get(size, {})
         width = size.get("width", 55)
@@ -20,7 +23,7 @@ class NotificationBadge(ft.Stack, Theme):
 
         #
         self.notification_text = ft.Text(
-            value=bagde_value, weight="bold", size=9, text_align="center"
+            value=notification, weight="bold", size=9, text_align="center"
         )
 
         self.notification_box: ft.Control = ft.Container(
@@ -91,15 +94,17 @@ class IconBadge(ft.Stack, Theme):
     def __init__(
         self,
         bagde_icon: str,
-        bagde_value: int = 0,
+        notification: int,
         *args,
         **kwargs,
     ):
+        #
         icon = badge_icon.get(bagde_icon)
+        self.notification = notification
 
         #
         self.notification_text = ft.Text(
-            value=bagde_value, weight="bold", size=9, text_align="center"
+            value=notification, weight="bold", size=9, text_align="center"
         )
 
         self.notification_box: ft.Control = ft.Container(

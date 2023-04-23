@@ -2,8 +2,6 @@
 
 
 """
-
-
 flet_material_theme: dict = {
     "red": {
         "primary": "#dd6058",

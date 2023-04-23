@@ -14,6 +14,7 @@ import flet_material as fm
 fm.Theme.set_theme(theme="blue")
 
 def main(page:ft.Page):
+    page.bgcolor = fm.Theme.bgcolor
     page.update()
 
 if __name__ == "__main__":
