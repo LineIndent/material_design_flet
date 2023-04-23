@@ -1,0 +1,2 @@
+[console_scripts]
+flet_material_init = flet_material.command.new_project:init_code

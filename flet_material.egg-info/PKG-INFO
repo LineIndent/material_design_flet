@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: flet-material
+Version: 0.1.0
+Summary: Material UI Library for Flet
+Home-page: https://github.com/LineIndent/material_design_flet
+Author: S. Ahmad P. Hakimi
+Author-email: pourhakimi@pm.me
+Keywords: material design,UI library,Flet
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE

@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="flet-material",
-    version="0.1.2",
+    version="0.1.0",
     author="S. Ahmad P. Hakimi",
     author_email="pourhakimi@pm.me",
     description="Material UI Library for Flet",
