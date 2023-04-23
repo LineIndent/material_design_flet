@@ -5,8 +5,10 @@ from flet_material.base import Theme
 class Buttons(ft.Container, Theme):
     def __init__(self, width, height, title: str, *args, **kwargs):
         #
+        self.title = title
+        #
         self.text = ft.Text(
-            title,
+            self.title,
             weight="bold",
             color=ft.colors.with_opacity(0.85, Theme.primary_theme),
         )
