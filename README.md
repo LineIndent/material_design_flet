@@ -24,10 +24,14 @@
     alt="Python Package Index"
   /></a>
 
-<!-- <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/flet-material"> -->
+<img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/flet-material">
 
+  <a href="https://flet-material.vercel.app"><img
+    src="https://img.shields.io/badge/docs-available-brightgreen.svg"
+    alt="Docs"
+  /></a>
 
-[![Documentation](https://img.shields.io/badge/docs-available-brightgreen.svg)](https://flet-material.vercel.app)
+<!-- [![Documentation](https://img.shields.io/badge/docs-available-brightgreen.svg)](https://flet-material.vercel.app) -->
 
 
 </p>
