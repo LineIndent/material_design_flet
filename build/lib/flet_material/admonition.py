@@ -7,23 +7,28 @@ class Admonitions(ft.Container):
         self,
         type_: str,
         expanded_height: int,
-        expand: bool,
+        expanded: bool,
         controls_list: list,
         *args,
-        **kwargs
+        **kwargs,
     ):
-        # define: control
+        #
+        self.type_ = type_
         self.expanded_height = expanded_height
+        self.expanded = expanded
+        self.controls_list = controls_list
+
+        # define: control
         self.column = ft.Column(
-            controls=controls_list,
+            controls=self.controls_list,
         )
 
         # define admonition title properties
-        bgcolor = admonitions_color_scheme.get(type_, {}).get("bgcolor", "#20222c")
-        border_color = admonitions_color_scheme.get(type_, {}).get(
+        bgcolor = admonitions_color_scheme.get(self.type_, {}).get("bgcolor", "#20222c")
+        border_color = admonitions_color_scheme.get(self.type_, {}).get(
             "border_color", "white24"
         )
-        icon = admonitions_color_scheme.get(type_, {}).get("icon", "white24")
+        icon = admonitions_color_scheme.get(self.type_, {}).get("icon", "white24")
 
         fonts = font_scheme.get("admonitions_title", {})
         title_font = fonts.get("font_family")
@@ -47,7 +52,7 @@ class Admonitions(ft.Container):
                                 size=18,
                             ),
                             ft.Text(
-                                type_.capitalize(),
+                                self.type_.capitalize(),
                                 size=title_size,
                                 font_family=title_font,
                                 weight="w700",
@@ -79,7 +84,7 @@ class Admonitions(ft.Container):
         kwargs.setdefault("border", ft.border.all(0.85, border_color))
         kwargs.setdefault("clip_behavior", ft.ClipBehavior.HARD_EDGE)
         kwargs.setdefault("animate", ft.Animation(300, "decelerate"))
-        kwargs.setdefault("expand", expand)
+        kwargs.setdefault("expand", self.expanded)
         kwargs.setdefault("border_radius", 6)
         kwargs.setdefault("height", 60)
         kwargs.setdefault("padding", 0)
@@ -112,7 +117,15 @@ class Admonitions(ft.Container):
 
 
 class FixedAdmonitions(ft.Container):
-    def __init__(self, type_: str, expand: bool, *args, **kwargs):
+    def __init__(
+        self,
+        type_: str,
+        expanded: bool,
+        title: str,
+        *args,
+        **kwargs,
+    ):
+        self.title = title
         # define admonition title properties
         bgcolor = admonitions_color_scheme.get(type_, {}).get("bgcolor", "#20222c")
         border_color = admonitions_color_scheme.get(type_, {}).get(
@@ -147,6 +160,12 @@ class FixedAdmonitions(ft.Container):
                                 font_family=title_font,
                                 weight="w700",
                             ),
+                            ft.Text(
+                                self.title,
+                                size=13,
+                                font_family=title_font,
+                                weight="w400",
+                            ),
                         ],
                     ),
                 ],
@@ -166,7 +185,7 @@ class FixedAdmonitions(ft.Container):
         kwargs.setdefault("border", ft.border.all(0.85, border_color))
         kwargs.setdefault("clip_behavior", ft.ClipBehavior.HARD_EDGE)
         kwargs.setdefault("animate", ft.Animation(300, "decelerate"))
-        kwargs.setdefault("expand", expand)
+        kwargs.setdefault("expand", expanded)
         kwargs.setdefault("border_radius", 6)
         kwargs.setdefault("height", 60)
         kwargs.setdefault("padding", 0)

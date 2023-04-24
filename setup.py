@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="flet-material",
-    version="0.1.0",
+    version="0.2.0",
     author="S. Ahmad P. Hakimi",
     author_email="pourhakimi@pm.me",
     description="Material UI Library for Flet",
@@ -23,10 +23,3 @@ setup(
     },
     keywords=["material design", "UI library", "Flet"],
 )
-
-
-# Update the version number in your setup.py file. Change the version argument to a new version number, following the semantic versioning scheme (e.g., 1.0.1).
-
-# python3 setup.py sdist bdist_wheel
-
-# [inside dist direcotry] => twine upload *
