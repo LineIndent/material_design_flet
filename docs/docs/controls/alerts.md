@@ -8,7 +8,11 @@ The ***alerts*** class is straightforward and easy to use. Choose where you want
 
 <span style="font-size:1rem;">Basic Alerts Example</span>
 
-=== "*main()*"
+!!! tip "Flet Material Alerts"
+
+    The Flet Material Library classes inherit from the controls provided by Flet. In this case, the ```fm.Alerts()``` class inherits from Flet's ```ft.Container()``` class, this means all properties of the latter are accessable through the former. 
+
+=== "*Alerts*"
 
     ``` py linenums="1"
     import flet as ft

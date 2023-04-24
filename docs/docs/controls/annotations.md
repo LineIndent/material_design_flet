@@ -8,7 +8,11 @@ The ***annotations*** class is straightforward and easy to use. Choose where you
 
 <span style="font-size:1rem;">Basic Annotation Example</span>
 
-=== "*main()*"
+!!! tip "Flet Material Annotations"
+
+    The Flet Material Library classes inherit from the controls provided by Flet. In this case, the ```fm.Annotations()``` class inherits from Flet's ```ft.Container()``` class, this means all properties of the latter are accessable through the former. 
+
+=== "*Annotations*"
 
     ``` py linenums="1"
     import flet as ft

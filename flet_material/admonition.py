@@ -10,7 +10,7 @@ class Admonitions(ft.Container):
         expanded: bool,
         controls_list: list,
         *args,
-        **kwargs
+        **kwargs,
     ):
         #
         self.type_ = type_
@@ -117,7 +117,15 @@ class Admonitions(ft.Container):
 
 
 class FixedAdmonitions(ft.Container):
-    def __init__(self, type_: str, expand: bool, *args, **kwargs):
+    def __init__(
+        self,
+        type_: str,
+        expanded: bool,
+        title: str,
+        *args,
+        **kwargs,
+    ):
+        self.title = title
         # define admonition title properties
         bgcolor = admonitions_color_scheme.get(type_, {}).get("bgcolor", "#20222c")
         border_color = admonitions_color_scheme.get(type_, {}).get(
@@ -152,6 +160,12 @@ class FixedAdmonitions(ft.Container):
                                 font_family=title_font,
                                 weight="w700",
                             ),
+                            ft.Text(
+                                self.title,
+                                size=13,
+                                font_family=title_font,
+                                weight="w400",
+                            ),
                         ],
                     ),
                 ],
@@ -171,7 +185,7 @@ class FixedAdmonitions(ft.Container):
         kwargs.setdefault("border", ft.border.all(0.85, border_color))
         kwargs.setdefault("clip_behavior", ft.ClipBehavior.HARD_EDGE)
         kwargs.setdefault("animate", ft.Animation(300, "decelerate"))
-        kwargs.setdefault("expand", expand)
+        kwargs.setdefault("expand", expanded)
         kwargs.setdefault("border_radius", 6)
         kwargs.setdefault("height", 60)
         kwargs.setdefault("padding", 0)

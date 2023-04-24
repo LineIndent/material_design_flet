@@ -8,6 +8,10 @@ The ***badges*** class is straightforward and easy to use. There are currently t
 
 <span style="font-size:1rem;">Basic Notifications Badge Example</span>
 
+!!! tip "Flet Material Badges"
+
+    The Flet Material Library classes inherit from the controls provided by Flet. In this case, both the ```fm.NotificationBadge()``` and the ```fm.IconBadge()``` classes inherit from Flet's ```ft.Container()``` class, this means all properties of the latter are accessable through the former. 
+
 === "*Notifications Badge*"
 
     ``` py linenums="1"

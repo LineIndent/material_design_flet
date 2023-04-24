@@ -30,13 +30,10 @@
 
 
 <p align="center">
-Modernize your websites and applications by implementing customized Flet controls that improve user experince and overall visual quality. 
+Modernize your websites and applications by implementing customized Flet controls that improve user experince and overall visual quality. UI components are flexible and in line with current design trends. 
+
 </p>
 
-
-<p align="center">
- UI components are flexible and in line with current design trends. 
-</p>
 
 
 ## 1. Installation

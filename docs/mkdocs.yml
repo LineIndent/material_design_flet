@@ -1,7 +1,17 @@
-site_name: Flet Material Design
-repo_name: LineIndent/material_design_flet
+# Project information
+site_name: Flet Material Library
+site_author: S. Ahmad P. Hakimi
+site_description: >-
+  UI component library built with Flet.
 
+# Repository
+repo_name: material_design_flet
 repo_url: https://github.com/LineIndent/material_design_flet
+
+# copyright
+copyright: Copyright &copy; 2023 S. Ahmad P. Hakimi
+
+# page tree
 nav:
   - Home: index.md
   - Controls:
@@ -14,10 +24,11 @@ nav:
       - Chips: controls/chips.md
       - Dropdowns: controls/dropdowns.md
       - Switches: controls/switches.md
+  - Contribute: contribute.md
 
 theme:
   name: material
-  favicon: images/favicon.png
+  # favicon: images/favicon.png
   # logo:
   palette:
     scheme: slate
@@ -91,21 +102,16 @@ markdown_extensions:
       emoji_generator: !!python/name:materialx.emoji.to_svg
 
 extra:
-  # made by Material MkDoc signature at footer
   generator: false
-
-  # social media icons and links
   social:
     - icon: fontawesome/brands/youtube
-      # link:
+      link: https://www.youtube.com/@lineindent
 
     - icon: fontawesome/brands/github
-      # link:
+      link: https://github.com/LineIndent
 
     - icon: fontawesome/brands/patreon
-      # link:
-
-  # form for cookies
+      link: https://www.patreon.com/user?u=87176956
   consent:
     title: Cookie consent
     description: >-
@@ -113,7 +119,5 @@ extra:
       as to measure the effectiveness of our documentation and whether users
       find what they're searching for. With your consent, you're helping us to
       make our documentation better.
-
-copyright: Copyright &copy; 2023 S. Ahmad P. Hakimi
 
 docs_dir: docs
