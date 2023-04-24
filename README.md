@@ -1,9 +1,9 @@
 
 <!-- <h2 style="color: #ff0000;" align=center>My Heading</h2>
  -->
-<p style="font-size: 2.55rem; font-weight: bold; background-image: linear-gradient(to top right, #3b82f6, #1b93f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height=0rem" align=center>
+<h3 style="font-size: 2.55rem; font-weight: bold; background-image: linear-gradient(to top right, #3b82f6, #1b93f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height=0rem" align=center>
   Flet Material Library
-</p>
+</h3>
 </p>
 <p align="center">
   <strong>
@@ -37,7 +37,7 @@
 </p>
 
 <p align="center">
-Modernize your website and applications by implementing customized Flet controls that improve user experince and overall quality. UI components are flexible and in line with current design trends
+Modernize your websites and applications by implementing customized Flet controls that improve user experince and overall visual quality. UI components are flexible and in line with current design trends. 
 </p>
 
 
