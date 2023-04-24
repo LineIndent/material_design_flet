@@ -27,7 +27,6 @@
 <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/flet-material">
 
 
-
 [![Documentation](https://img.shields.io/badge/docs-available-brightgreen.svg)](https://flet-material.vercel.app)
 
 
