@@ -26,16 +26,14 @@
 
 <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/flet-material">
 
-  <a href="https://flet-material.vercel.app"><img
-    src="https://img.shields.io/badge/docs-available-brightgreen.svg"
-    alt="Docs"
-  /></a>
-
-<!-- [![Documentation](https://img.shields.io/badge/docs-available-brightgreen.svg)](https://flet-material.vercel.app) -->
 
 
 </p>
 
+  <a href="https://flet-material.vercel.app"><img
+    src="https://img.shields.io/badge/docs-available-brightgreen.svg"
+    alt="Docs"
+  /></a>
 
 <p align="center">
 Modernize your websites and applications by implementing customized Flet controls that improve user experince and overall visual quality. UI components are flexible and in line with current design trends. 
