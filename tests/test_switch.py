@@ -1,0 +1,37 @@
+import flet as ft
+import flet_material as fm
+import unittest
+
+
+switch = fm.Switchs()
+
+
+class TestButtons(unittest.TestCase):
+    def test_attributes(self):
+        self.assertEqual(switch.width, 54)
+        self.assertEqual(switch.height, 25)
+        self.assertEqual(switch.border_radius, 25)
+        self.assertEqual(switch.bgcolor, "white10")
+        self.assertEqual(switch.padding, 4)
+        self.assertEqual(switch.clip_behavior, ft.ClipBehavior.HARD_EDGE)
+
+    def test_switch_events(self):
+        event = ft.MouseEvent(ft.EventType.CLICK, self.switch.toggle, None)
+        self.switch.toggle_switch(event)
+
+        # Ensure switch is on after the click
+        self.assertEqual(self.switch.bgcolor, fm.Theme.primary_theme)
+        self.assertEqual(self.switch.toggle.offset, ft.transform.Offset(0.25, 0))
+
+        pass
+
+    def test_parameter_types(self):
+        # Test if switch is an instance of the Switchs class:
+        self.assertIsInstance(switch, fm.Switchs)
+
+        # Test if switch is initialized with the correct default values:
+        self.assertEqual(switch.state, False)
+
+
+if __name__ == "__main__":
+    unittest.main()
