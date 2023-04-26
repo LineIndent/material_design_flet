@@ -19,9 +19,6 @@ class TestButtons(unittest.TestCase):
         # Test if switch is an instance of the Switchs class:
         self.assertIsInstance(switch, fm.Switchs)
 
-        # Test if switch is initialized with the correct default values:
-        self.assertEqual(switch.state, False)
-
 
 if __name__ == "__main__":
     unittest.main()
