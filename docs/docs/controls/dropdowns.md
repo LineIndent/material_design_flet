@@ -1,4 +1,4 @@
-# Alerts
+# Dropdown
 
 Dropdowns are used to allow users to select one option from a list of choices. They are commonly used in menus and settings to provide a compact way to present a large number of options. Dropdowns can be designed in various styles, such as with a simple list or with additional information, such as icons or descriptions.
 

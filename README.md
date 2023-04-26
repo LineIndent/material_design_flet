@@ -3,7 +3,7 @@
    <img src="https://github.com/flet-dev/flet/blob/main/media/logo/Icon-512.png" width="180" height="180" alt="Flet Material Library">
   </a>
 
-**A UI library for Flet framework**
+**A UI library for Flet**
 
  
  </div>
@@ -39,21 +39,19 @@
   </p>
 
 <p align="center">
-Modernize your websites and applications by implementing customized Flet controls that improve user experince and overall visual quality. UI components are flexible and in line with current design trends. 
-
+Modernize your websites and applications by implementing customized Flet controls that improve user experience and overall visual quality. The UI components are flexible and aligned with current design trends.
 </p>
 
 
 
 ## 1. Installation
 
-Flet Material requires the following:
-
+To use Flet Material, you need to have the following installed:
 
 -   Latest version of Flet
 -   Python 3.5+
 
-If you don't have Flet isntalled, installing Flet Material automatically installs it for you.
+If you don't have Flet installed, installing Flet Material automatically installs it for you. You can install Flet Material using the following command:
 ```
 $ pip install flet-material
 ```
@@ -62,9 +60,7 @@ $ pip install flet-material
 
 ## 2. Application Setup
 
-Once you have Flet Material on your system, you can try and run the following code snippet to make sure eveything is working properly:
-
-If you don't have Flet isntalled, installing Flet Material automatically installs it for you.
+After installing Flet Material, you can test if it's working properly by running the following code snippet:
 
 ```python
 import flet as ft
@@ -93,18 +89,18 @@ if __name__ == "__main__":
    ft.flet.app(target=main)
 ```
 
-If the package was installed correctly you should see a centered and customized button. 
+If the package was installed correctly, you should see a centered and customized button.
 
 ## 3. Code Breakdown
 
-The script may seem familier because it's very much like the basic Flet application setup. In fact it's the very same with some minor additions.
+The script is similar to the basic Flet application setup, with some minor additions.
 
-First, note the import statement at the top of the main file. This is the main library and all its components.
+At the top of the main file, you need to import the Flet Material library and all its components:
 ```python
 import flet_material as fm
 ```
 
-Below the imported modules is the ```Theme``` instance from ```flet_material```. This sets up the entire application theme so that all colors, primary and accent, are uniform and the same, giving the applications being built much appeal.
+Below the imported modules is the Theme instance from Flet Material. It sets up the entire application theme so that all colors, primary and accent, are uniform, giving the applications being built a consistent look and feel. For a list of supported theme colors, you can visit the library's documentation online.
 
 For a list of supported theme colors, you can visit the library's documentation online.
 
@@ -112,7 +108,7 @@ For a list of supported theme colors, you can visit the library's documentation 
 fm.Theme.set_theme(theme="teal")
 ```
 
-Finally, wihtin the ```main()``` method we have a new control called ```fm.Buttons()```, which simply inherits it's properties from several Flet classes and is customized.
+Finally, within the main() method, you can use a new control called fm.Buttons(), which inherits its properties from several Flet classes and can be customized to your liking:
 
 ```python
 button = fm.Buttons(
@@ -122,7 +118,7 @@ button = fm.Buttons(
 )
 ```
 
-That's it! You now have access to Flet Material library components!!
+That's it! You now have access to Flet Material library components!
 
 ## Contributing
 

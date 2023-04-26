@@ -19,9 +19,7 @@ def main(page:ft.Page):
 
 if __name__ == "__main__":
     ft.flet.app(target=main)
-
-if __name__ == '__main__':
-    app.run()"""
+"""
 
     with open(f"{project_name}/main.py", "w") as f:
         f.write(template_code)
