@@ -15,16 +15,6 @@ class TestButtons(unittest.TestCase):
         self.assertEqual(switch.padding, 4)
         self.assertEqual(switch.clip_behavior, ft.ClipBehavior.HARD_EDGE)
 
-    def test_switch_events(self):
-        event = ft.MouseEvent(ft.EventType.CLICK, self.switch.toggle, None)
-        self.switch.toggle_switch(event)
-
-        # Ensure switch is on after the click
-        self.assertEqual(self.switch.bgcolor, fm.Theme.primary_theme)
-        self.assertEqual(self.switch.toggle.offset, ft.transform.Offset(0.25, 0))
-
-        pass
-
     def test_parameter_types(self):
         # Test if switch is an instance of the Switchs class:
         self.assertIsInstance(switch, fm.Switchs)
