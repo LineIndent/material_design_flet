@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="flet-material",
-    version="0.2.0",
+    version="0.3.1",
     author="S. Ahmad P. Hakimi",
     author_email="pourhakimi@pm.me",
     description="Material UI Library for Flet",
@@ -10,7 +10,7 @@ setup(
     long_description_content_type="text/markdown",
     url="https://github.com/LineIndent/material_design_flet",
     packages=["flet_material", "styles"],
-    install_requires=["click==8.1.3", "flet==0.5.2"],
+    install_requires=["click==8.1.3", "flet>=0.7.4"],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",

@@ -115,3 +115,4 @@ styles/__pycache__/fonts.cpython-310.pyc
 styles/__pycache__/theme.cpython-310.pyc
 tests/test_admonitions.py
 tests/test_buttons.py
+tests/test_switch.py
