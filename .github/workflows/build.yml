@@ -1,8 +1,12 @@
-name: Build
+name: Build and Publish to PyPI
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+  release:
+    types:
+      - created
 
 jobs:
   build:
@@ -10,13 +14,29 @@ jobs:
     strategy:
       matrix:
         python-version: [3.8, 3.9, 3.10]
+
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
+
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
-          python-version: 3.9
+          python-version: ${{ matrix.python-version }}
+
       - name: Install dependencies
         run: pip install -r requirements.txt
+
       - name: Run tests
         run: python -m unittest discover -s tests
+
+      - name: Build package
+        run: python -m build
+
+      - name: Publish to PyPI
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
+          TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+        run: |
+          python -m twine upload --skip-existing dist/*
