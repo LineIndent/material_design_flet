@@ -51,11 +51,11 @@ jobs:
         with:
           python-version: 3.x
 
+      - name: Install twine & wheel
+        run: pip install --no-cache-dir twine wheel
+
       - name: Create Distribution Package
         run: python setup.py sdist bdist_wheel
-
-      - name: Install twine
-        run: pip install --no-cache-dir twine
 
       - name: Publish to PyPI
         env:
