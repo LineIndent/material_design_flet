@@ -2,6 +2,19 @@ import flet as ft
 from styles import admonitions_color_scheme, font_scheme
 
 
+class Admonition(ft.Container):
+    def __init__(
+        self, kind: str, expand: bool, end_height: int, components: any | None
+    ):
+        self.kind = kind
+        self.components = components
+        self.end_height = end_height
+
+        super().__init__(
+            kind=kind, expand=expand, end_height=end_height, components=components
+        )
+
+
 class Admonitions(ft.Container):
     def __init__(
         self,

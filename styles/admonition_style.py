@@ -1,4 +1,4 @@
-admonitions_color_scheme: dict = {
+ADMONITION_STYLE_SHEET: dict = {
     "note": {
         "bgcolor": "#2f3851",
         "border_color": "#448afe",
