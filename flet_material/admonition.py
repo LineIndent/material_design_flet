@@ -4,7 +4,7 @@ from styles import admonitions_color_scheme, font_scheme
 
 class Admonition(ft.Container):
     def __init__(
-        self, kind: str, expand: bool, end_height: int, components: any | None
+        self, kind: str, expand: bool, end_height: int, components: any = None
     ):
         self.kind = kind
         self.components = components
