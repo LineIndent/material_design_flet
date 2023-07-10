@@ -1,5 +1,4 @@
 style_sheet = {
-    "status": "OK",
     "admonitions": [
         {
             "note": {
