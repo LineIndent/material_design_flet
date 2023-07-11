@@ -113,11 +113,9 @@ class FixedAdmonitions(ft.Container):
     ):
         self.title = title
         # define admonition title properties
-        bgcolor = admonitions_color_scheme.get(type_, {}).get("bgcolor", "#20222c")
-        border_color = admonitions_color_scheme.get(type_, {}).get(
-            "border_color", "white24"
-        )
-        icon = admonitions_color_scheme.get(type_, {}).get("icon", "white24")
+        bgcolor = admon_style.get(type_, {}).get("bgcolor", "#20222c")
+        border_color = admon_style.get(type_, {}).get("border_color", "white24")
+        icon = admon_style.get(type_, {}).get("icon", "white24")
 
         fonts = font_scheme.get("admonitions_title", {})
         title_font = fonts.get("font_family")
