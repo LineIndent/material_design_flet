@@ -7,3 +7,4 @@ from flet_material.chip import FilterChip
 from flet_material.badge import NotificationBadge, IconBadge
 from flet_material.switch import Switchs
 from flet_material.alert import Alerts
+from flet_material.code_block import Code
