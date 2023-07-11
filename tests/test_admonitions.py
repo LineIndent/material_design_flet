@@ -11,7 +11,7 @@ class TestButtons(unittest.TestCase):
     def test_parameter_types(self):
         self.assertIsInstance(dropdown.type_, str)
         self.assertIsInstance(dropdown.expanded_height, int)
-        self.assertIsInstance(dropdown.controls_list, (list, type(None)))
+        self.assertIsInstance(dropdown.components, (list, type(None)))
 
 
 if __name__ == "__main__":
