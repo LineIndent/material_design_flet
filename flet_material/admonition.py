@@ -1,18 +1,5 @@
 import flet as ft
-from styles import admonitions_color_scheme, font_scheme
-
-
-class Admonition(ft.Container):
-    def __init__(
-        self, kind: str, expand: bool, end_height: int, components: any = None
-    ):
-        self.kind = kind
-        self.components = components
-        self.end_height = end_height
-
-        super().__init__(
-            kind=kind, expand=expand, end_height=end_height, components=components
-        )
+from styles import admon_style, font_scheme
 
 
 class Admonitions(ft.Container):
@@ -20,32 +7,31 @@ class Admonitions(ft.Container):
         self,
         type_: str,
         expanded_height: int,
-        expanded: bool,
-        controls_list: list,
-        *args,
-        **kwargs,
+        expand: bool,
+        components: list,
+        height=60,
+        padding=0,
+        border_radius=6,
+        animate=ft.Animation(300, "decelerate"),
+        clip_behavior=ft.ClipBehavior.HARD_EDGE,
+        shadow=ft.BoxShadow(
+            spread_radius=8,
+            blur_radius=15,
+            color=ft.colors.with_opacity(0.35, "black"),
+            offset=ft.Offset(4, 4),
+        ),
     ):
-        #
         self.type_ = type_
         self.expanded_height = expanded_height
-        self.expanded = expanded
-        self.controls_list = controls_list
-
-        # define: control
+        self.components = components
         self.column = ft.Column(
-            controls=self.controls_list,
+            controls=self.components,
         )
 
         # define admonition title properties
-        bgcolor = admonitions_color_scheme.get(self.type_, {}).get("bgcolor", "#20222c")
-        border_color = admonitions_color_scheme.get(self.type_, {}).get(
-            "border_color", "white24"
-        )
-        icon = admonitions_color_scheme.get(self.type_, {}).get("icon", "white24")
-
-        fonts = font_scheme.get("admonitions_title", {})
-        title_font = fonts.get("font_family")
-        title_size = fonts.get("size")
+        bgcolor = admon_style.get(self.type_, {}).get("bgcolor", "#20222c")
+        border_color = admon_style.get(self.type_, {}).get("border_color", "white24")
+        icon = admon_style.get(self.type_, {}).get("icon", "white24")
 
         self.container = ft.Container(
             height=58,
@@ -66,8 +52,7 @@ class Admonitions(ft.Container):
                             ),
                             ft.Text(
                                 self.type_.capitalize(),
-                                size=title_size,
-                                font_family=title_font,
+                                size=12,
                                 weight="w700",
                             ),
                         ],
@@ -84,26 +69,16 @@ class Admonitions(ft.Container):
             ),
         )
 
-        # define self instance properties
-        kwargs.setdefault(
-            "shadow",
-            ft.BoxShadow(
-                spread_radius=8,
-                blur_radius=15,
-                color=ft.colors.with_opacity(0.35, "black"),
-                offset=ft.Offset(4, 4),
-            ),
-        )
-        kwargs.setdefault("border", ft.border.all(0.85, border_color))
-        kwargs.setdefault("clip_behavior", ft.ClipBehavior.HARD_EDGE)
-        kwargs.setdefault("animate", ft.Animation(300, "decelerate"))
-        kwargs.setdefault("expand", self.expanded)
-        kwargs.setdefault("border_radius", 6)
-        kwargs.setdefault("height", 60)
-        kwargs.setdefault("padding", 0)
-        kwargs.setdefault(
-            "content",
-            ft.Column(
+        super().__init__(
+            expand=expand,
+            height=height,
+            padding=padding,
+            border_radius=border_radius,
+            animate=animate,
+            clip_behavior=clip_behavior,
+            border=ft.border.all(0.85, border_color),
+            shadow=shadow,
+            content=ft.Column(
                 alignment="start",
                 spacing=0,
                 controls=[
@@ -112,8 +87,6 @@ class Admonitions(ft.Container):
                 ],
             ),
         )
-
-        super().__init__(*args, **kwargs)
 
     # method: expand and retract admonition control + animation set
     def resize_admonition(self, e):
