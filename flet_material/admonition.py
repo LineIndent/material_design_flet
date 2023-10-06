@@ -2,7 +2,7 @@ import flet as ft
 from styles import admon_style, font_scheme
 
 
-class Admonitions(ft.Container):
+class Admonition(ft.Container):
     def __init__(
         self,
         type_: str,

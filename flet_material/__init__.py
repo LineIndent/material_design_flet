@@ -1,5 +1,5 @@
 from flet_material.base import Theme
-from flet_material.admonition import Admonitions, FixedAdmonitions
+from flet_material.admonition import Admonition, FixedAdmonitions
 from flet_material.annotation import Annotations
 from flet_material.checkbox import CheckBox
 from flet_material.button import Buttons
